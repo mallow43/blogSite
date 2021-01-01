@@ -11,14 +11,12 @@ var expressSanitizer = require("express-sanitizer");
   (passport = require("passport")),
   (flash = require("connect-flash"));
 (Comment = require("./models/comments.js")),
-  (Blogs = require("./models/products.js")),
+  (Blogs = require("./models/blogs.js")),
   (User = require("./models/users.js"));
 
 var commentRouts = require("./routs/comments.js"),
-  productRouts = require("./routs/products.js"),
-  cartRouts = require("./routs/cart.js"),
-  userRouts = require("./routs/users.js"),
-  orderRouts = require("./routs/order");
+  blogRouts = require("./routs/blogs.js"),
+  userRouts = require("./routs/users.js");
 
 // mongoose.connect(
 //   "mongodb://uigh05hqkcltukk32zbj:kKOkWDw9efrKXJdeA9w4@bhpygth5x3lvaj4-mongodb.services.clever-cloud.com:27017/bhpygth5x3lvaj4",
@@ -56,11 +54,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(productRouts);
+app.use(blogRouts);
 app.use(commentRouts);
 app.use(userRouts);
-app.use(cartRouts);
-app.use(orderRouts);
 
 //Comment Routs
 
