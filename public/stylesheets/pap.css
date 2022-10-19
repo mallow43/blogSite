@@ -30,7 +30,7 @@ body{
     background-repeat: no-repeat;
     opacity: 0;
     z-index: 0;
-    animation: imageAnimation 150s linear infinite; 
+    animation: imageAnimation 50s linear infinite; 
   }
   .slideshow li:nth-child(1) { 
     background-image: url("https://images.unsplash.com/photo-1516040553818-957c96b20e8d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") 
