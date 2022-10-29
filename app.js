@@ -14,14 +14,22 @@ var expressSanitizer = require("express-sanitizer");
   (Blogs = require("./models/blogs.js")),
   (User = require("./models/users.js"));
 
+require('dotenv').config();
+
+
 var commentRouts = require("./routs/comments.js"),
   blogRouts = require("./routs/blogs.js"),
   userRouts = require("./routs/users.js");
 
-mongoose.connect(
-  process.env.URL,
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+  // mongoose.connect(
+  //   "mongodb://uigh05hqkcltukk32zbj:kKOkWDw9efrKXJdeA9w4@bhpygth5x3lvaj4-mongodb.services.clever-cloud.com:27017/bhpygth5x3lvaj4",
+  //   { useNewUrlParser: true, useUnifiedTopology: true }
+  // );
+  console.log("mongodb+srv://mats2:" + process.env.URL+"@cluster0.ifbbqwt.mongodb.net/?retryWrites=true&w=majority")
+  mongoose.connect(
+    "mongodb+srv://mats2:" + process.env.URL+"@cluster0.ifbbqwt.mongodb.net/?retryWrites=true&w=majority",
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  );
 // mongoose.connect("mongodb://localhost/blog_app");
 
 app.use(methodOverride("_method"));
