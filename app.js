@@ -27,7 +27,7 @@ var commentRouts = require("./routs/comments.js"),
   // );
   console.log("mongodb+srv://mats2:" + process.env.URL+"@cluster0.ifbbqwt.mongodb.net/?retryWrites=true&w=majority")
   mongoose.connect(
-    "mongodb+srv://mats2:" + process.env.URL+"@cluster0.ifbbqwt.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://mats2:" + process.env.PASS+"@cluster0.ifbbqwt.mongodb.net/?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
   );
 // mongoose.connect("mongodb://localhost/blog_app");

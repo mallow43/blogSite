@@ -13,6 +13,8 @@ router.get("/register", function(req, res){
 })
 passport.use(new LocalStrategy(User.authenticate()));
 router.post("/blogs/register", function(req, res){
+    if(req.body.access ==process.env.PASS){
+
     User.register(new User({username: req.body.username}), req.body.password, function(err, user){
         if(err){
             req.flash("error", err.message)
@@ -25,6 +27,10 @@ router.post("/blogs/register", function(req, res){
         })
         
     })
+    } else{
+        req.flash("error", "Incorrect Access Code")
+        res.redirect("/blogs")
+    }
 })
 router.get("/login", function(req, res){
     res.render("login.ejs")
